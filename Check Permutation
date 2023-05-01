@@ -1,0 +1,32 @@
+
+from sys import stdin
+
+
+def isPermutation(string1, string2) :
+    n1=len(string1)
+    n2=len(string2)
+    if n1!=n2:
+        return False
+    a=sorted(string1)
+    string1=" ".join(a)
+    b=sorted(string2)
+    string2=" ".join(b)
+    for i in range(0,n1,1):
+        if string1[i]!=string2[i]:
+            return False
+    return True
+	#Your code goes here
+
+
+
+#main
+string1 = stdin.readline().strip();
+string2 = stdin.readline().strip();
+
+ans = isPermutation(string1, string2)
+
+if ans :
+    print('true')
+else :
+    print('false')
+
